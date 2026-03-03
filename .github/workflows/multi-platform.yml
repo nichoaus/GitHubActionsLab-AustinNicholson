@@ -9,16 +9,10 @@ jobs:
   ubuntu-job:
     runs-on: ubuntu-latest
     steps:
-      - name: step 1 for ubuntu job
-        uses: actions/checkout@v4
-
-      - name: OS info
+      - uses: actions/checkout@v4
+      - name: step 1 for ubuntu - OS info
         run: uname -a
-
-      - name: running
-        run: ant
-
-      - name: showing file
+      - name: Create File and Display
         run: |
           echo "Hello from Ubuntu" > ubuntu.txt
           cat ubuntu.txt
@@ -26,16 +20,10 @@ jobs:
   windows-job:
     runs-on: windows-latest
     steps:
-      - name: step 1 for windows job
-        uses: actions/checkout@v4
-
-      - name: OS info
+      - uses: actions/checkout@v4
+      - name: step 1 for windows - OS info
         run: systeminfo
-
-      - name: running
-        run: ant
-
-      - name: showing file
+      - name: Create File and Display
         run: |
           echo Hello from Windows > windows.txt
           type windows.txt
@@ -43,16 +31,10 @@ jobs:
   macos-job:
     runs-on: macos-latest
     steps:
-      - name: step 1 for macos job
-        uses: actions/checkout@v4
-
-      - name: OS info
+      - uses: actions/checkout@v4
+      - name: step 1 for mac OS - OS info
         run: uname -a
-
-      - name: running
-        run: ant
-
-      - name: showing file
+      - name: Create File and Display
         run: |
           echo "Hello from macOS" > macos.txt
           cat macos.txt
