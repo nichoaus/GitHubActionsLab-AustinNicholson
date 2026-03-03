@@ -10,37 +10,37 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: step 1 for main
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: setup java version
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
 
-      - name: Build with Ant
+      - name: build test
         run: ant
 
-      - name: Build Complete
+      - name: build complete
         run: echo "Build finished."
 
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Run Tests
-        run: echo "Running tests..."
+      - name: running tests
+        run: echo "Running tests"
 
-      - name: Test Complete
+      - name: tests complete
         run: echo "Tests finished."
 
   deploy:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Deploy Application
+      - name: deploying
         run: echo "Deploying..."
 
-      - name: Deploy Complete
+      - name: deployment complete
         run: echo "Deployment finished."
