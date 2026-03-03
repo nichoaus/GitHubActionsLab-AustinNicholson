@@ -9,32 +9,50 @@ jobs:
   ubuntu-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: step 1 for ubuntu - OS info
+      - name: step 1 ubuntu
+        uses: actions/checkout@v4
+
+      - name: OS info
         run: uname -a
-      - name: Create File and Display
+
+      - name: message
+        run: echo "Hello from Ubuntu"
+
+      - name: displaying file
         run: |
-          echo "Hello from Ubuntu" > ubuntu.txt
+          echo "This file was created on Ubuntu." > ubuntu.txt
           cat ubuntu.txt
 
   windows-job:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: step 1 for windows - OS info
+      - name: step 1 windows
+        uses: actions/checkout@v4
+
+      - name: OS info
         run: systeminfo
-      - name: Create File and Display
+
+      - name: message
+        run: echo Hello from Windows
+
+      - name: displaying file
         run: |
-          echo Hello from Windows > windows.txt
+          echo This file was created on Windows > windows.txt
           type windows.txt
 
   macos-job:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: step 1 for mac OS - OS info
+      - name: step 1 mac
+        uses: actions/checkout@v4
+
+      - name: OS info
         run: uname -a
-      - name: Create File and Display
+
+      - name: message
+        run: echo "Hello from macOS"
+
+      - name: displaying file
         run: |
-          echo "Hello from macOS" > macos.txt
+          echo "This file was created on macOS." > macos.txt
           cat macos.txt
