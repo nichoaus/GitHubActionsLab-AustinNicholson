@@ -3,7 +3,7 @@ name: Multi-Platform Workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   ubuntu-job:
